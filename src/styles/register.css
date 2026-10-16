@@ -1,0 +1,3 @@
+/* Registration page: the form brings its own styles; these only fit it under the site nav */
+.reg .tc-nav{display:none}            /* the site nav replaces the form's own logo header */
+.reg .tc-page{min-height:calc(100vh - 72px);padding-top:34px}

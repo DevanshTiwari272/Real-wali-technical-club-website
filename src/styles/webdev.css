@@ -1,0 +1,25 @@
+/* Web Dev page only: typing intro overlay + hero + tags */
+.overlay{will-change:transform;position:fixed;inset:0;z-index:50;background:var(--bg);display:grid;place-items:center;padding:22px;overflow:hidden}
+.overlay .win{width:min(560px,100%)}
+.skip{position:absolute;top:calc(18px + env(safe-area-inset-top,0px));right:18px;font-size:.6rem;padding:10px 12px;box-shadow:none}
+.code{margin:0;padding:20px;min-height:230px;font:inherit;font-size:1.55rem;line-height:1.35;white-space:pre-wrap;color:var(--ink)}
+.tok{color:var(--acc)}
+.foot{display:flex;justify-content:space-between;align-items:center;padding:14px 20px;border-top:4px solid var(--line);color:var(--dim)}
+.runwrap{position:relative}
+.mouse{position:absolute;left:46%;top:52%;width:32px;height:40px;z-index:3;pointer-events:none}
+.mouse svg{width:100%;height:100%;fill:#fff;shape-rendering:crispEdges;filter:drop-shadow(3px 3px 0 #000)}
+
+.wd-hero{display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:center;padding:40px 0 20px}
+.wd-hero h1{font-family:'Press Start 2P',monospace;font-weight:400;font-size:clamp(1.4rem,3.8vw,2.5rem);line-height:1.5;margin:0 0 24px}
+.wd-hero .lead{font-size:1.75rem;color:var(--dim);margin:0 0 32px;max-width:28em}
+.wd-hero .cta{display:flex;gap:22px;flex-wrap:wrap}
+.mock{padding:22px;min-height:250px;display:flex;flex-direction:column;gap:14px}
+.mock h3{font-family:'Press Start 2P',monospace;font-weight:400;font-size:1rem;margin:0;line-height:1.5}
+.blk{height:14px;background:var(--line)}
+.blk.s{width:60%}
+.mock .btn{align-self:flex-start;font-size:.55rem;padding:10px 12px;margin-top:auto;box-shadow:4px 4px 0 var(--shade)}
+.tags{display:flex;flex-wrap:wrap;gap:16px}
+.tags span{border:4px solid var(--line);padding:10px 16px;background:var(--panel);font-size:1.5rem}
+.tags span:hover{border-color:var(--acc)}
+
+@media(max-width:860px){.wd-hero{grid-template-columns:1fr}}

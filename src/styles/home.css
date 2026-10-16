@@ -1,0 +1,27 @@
+/* Home page only */
+.home-hero{padding:34px 0 0;text-align:center}
+.home-hero h1{font-family:'Press Start 2P',monospace;font-weight:400;font-size:clamp(1.3rem,4.4vw,3rem);line-height:1.5;margin:0 auto 44px;max-width:16em}
+.hero-stage{position:relative;max-width:1000px;margin:0 auto}
+.inner{position:relative;overflow:hidden;line-height:0;aspect-ratio:16/9}
+.inner img,.pix{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 40%}
+.pix{image-rendering:pixelated;transition:opacity .4s steps(4)}
+.win:hover .pix{opacity:0}
+.inner::after{content:'';position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(transparent 0 3px,rgba(0,0,0,.18) 3px 4px)}
+.scan{position:absolute;inset:0;z-index:1;pointer-events:none;animation:scan 5s steps(12) infinite;will-change:transform}
+.scan::after{content:'';position:absolute;left:0;right:0;top:0;height:24px;background:rgba(91,140,255,.2)}
+@keyframes scan{from{transform:translateY(-10%)}to{transform:translateY(100%)}}
+.chip{position:absolute;background:var(--bg);border:4px solid var(--acc);padding:8px 12px;font-size:1.2rem;white-space:nowrap;animation:bob 1.6s steps(2) infinite;z-index:2}
+@keyframes bob{50%{transform:translateY(-6px)}}
+.c2{bottom:34px;left:-22px;animation-delay:.5s}
+.c3{bottom:-24px;right:12%;animation-delay:1s}
+
+.about-row{display:grid;grid-template-columns:1.6fr 1fr;gap:40px;align-items:center;max-width:1000px;margin:84px auto 0;text-align:left}
+.about-row .lead{font-size:1.8rem;color:var(--ink);margin:0}
+.about-row .cta{display:flex;flex-direction:column;gap:20px;align-items:flex-start}
+
+.strip{margin-top:84px;overflow:hidden;border-block:4px solid var(--line);padding:14px 0;background:var(--panel)}
+.track{display:flex;gap:48px;width:max-content;animation:marq 40s steps(60) infinite;will-change:transform;font-family:'Press Start 2P',monospace;font-size:.7rem}
+.track b{color:var(--acc);font-weight:400}
+@keyframes marq{to{transform:translateX(-50%)}}
+
+@media(max-width:860px){.about-row{grid-template-columns:1fr}.c2{left:-8px}}

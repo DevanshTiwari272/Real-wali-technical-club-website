@@ -1,0 +1,52 @@
+/* Shared styles: tokens, reset, nav, buttons, window, rows, banner, footer */
+:root{--bg:#080b16;--panel:#0f1526;--line:#26345c;--ink:#eef2ff;--dim:#93a0c8;--acc:#5b8cff;--shade:#2a4aa8;color-scheme:dark;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'VT323','Courier New',monospace;font-size:1.45rem;line-height:1.3;overflow-x:hidden}
+.px{font-family:'Press Start 2P',monospace;font-weight:400}
+.sky{position:fixed;inset:0;z-index:-1;opacity:.6;background:
+linear-gradient(#fff,#fff) 6% 12%/3px 3px no-repeat,linear-gradient(var(--acc),var(--acc)) 24% 70%/3px 3px no-repeat,
+linear-gradient(#fff,#fff) 41% 30%/3px 3px no-repeat,linear-gradient(#fff,#fff) 63% 82%/3px 3px no-repeat,
+linear-gradient(var(--acc),var(--acc)) 78% 18%/3px 3px no-repeat,linear-gradient(#fff,#fff) 92% 55%/3px 3px no-repeat,
+linear-gradient(#fff,#fff) 14% 46%/3px 3px no-repeat,linear-gradient(#fff,#fff) 55% 8%/3px 3px no-repeat}
+.wrap{max-width:1100px;margin:0 auto;padding:0 22px}
+
+.logo{font-size:.8rem;display:flex;align-items:center;gap:12px;color:inherit;text-decoration:none}
+.logo i{width:20px;height:20px;background:var(--acc);display:inline-block;box-shadow:inset -4px -4px 0 var(--shade)}
+
+/* buttons */
+.btn{font-family:'Press Start 2P',monospace;font-size:.7rem;border:4px solid var(--acc);padding:16px 20px;cursor:pointer;text-decoration:none;display:inline-block;background:transparent;color:var(--acc);box-shadow:5px 5px 0 var(--shade)}
+.btn.go{background:var(--acc);color:var(--bg)}
+.btn:active,.btn.pressed{box-shadow:none;transform:translate(5px,5px)}
+.btn:focus-visible,a:focus-visible{outline:4px solid #fff;outline-offset:4px}
+
+/* blinking block cursor */
+.cur{display:inline-block;width:.55em;height:.95em;background:var(--acc);vertical-align:-.12em;margin-left:2px;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+
+/* retro window */
+.win{border:4px solid var(--acc);background:var(--panel);box-shadow:10px 10px 0 var(--shade);text-align:left}
+.bar{display:flex;align-items:center;gap:8px;background:var(--acc);color:var(--bg);padding:8px 12px;font-family:'Press Start 2P',monospace;font-size:.6rem}
+.bar i{width:12px;height:12px;background:var(--bg);display:inline-block}
+.bar span{margin-left:auto}
+
+/* sections + rows */
+.sec{margin-top:90px}
+.sec h2,.banner h2{font-family:'Press Start 2P',monospace;font-weight:400;font-size:clamp(1rem,2.6vw,1.5rem);line-height:1.5;margin:0 0 28px}
+.row{display:grid;grid-template-columns:110px 220px 1fr;gap:26px;align-items:center;padding:22px 18px;border-top:4px solid var(--line)}
+.row:last-child{border-bottom:4px solid var(--line)}
+.row:hover{background:var(--panel);border-top-color:var(--acc)}
+.row b{font-family:'Press Start 2P',monospace;font-weight:400;font-size:.7rem;color:var(--acc)}
+.row h3{font-family:'Press Start 2P',monospace;font-weight:400;font-size:1rem;margin:0}
+.row p{margin:0;color:var(--dim);font-size:1.6rem}
+.row svg{width:64px;height:64px;fill:var(--acc);shape-rendering:crispEdges;display:block}
+
+/* join banner + footer */
+.banner{margin-top:90px;border:4px dashed var(--acc);padding:36px;display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap}
+.banner h2{margin:0 0 10px}
+.banner p{margin:0;color:var(--dim);font-size:1.6rem}
+footer{text-align:center;color:var(--dim);padding:70px 0 36px}
+
+@media(max-width:860px){.row{grid-template-columns:1fr;gap:10px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important}}

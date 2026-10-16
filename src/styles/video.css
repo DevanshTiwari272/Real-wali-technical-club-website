@@ -1,0 +1,93 @@
+/* Video Editing page: the pixel editor (hero + intro). Layout classes come from graphics.css / electronics.css.
+   All sizes inside .re are cqw = % of the editor's own width, so it scales as one picture. */
+.vhero h1{font-size:clamp(1.3rem,4.6vw,3.2rem)}
+.re{container-type:inline-size;position:relative;display:flex;flex-direction:column;aspect-ratio:16/10;width:100%;background:#0a0e1f;border:4px solid var(--acc);overflow:hidden;font-family:'VT323','Courier New',monospace;color:var(--ink);text-align:left;user-select:none}
+.g-art .re{box-shadow:8px 8px 0 var(--shade)}
+.ai-board.wide{width:min(94vw,780px)}
+.ai-board .re{box-shadow:10px 10px 0 var(--shade)}
+.re h4{margin:0 0 1cqw;font:400 1.05cqw/1.4 'Press Start 2P',monospace;color:var(--acc)}
+
+/* top bar */
+.re-top{height:4.4cqw;flex:none;display:flex;align-items:center;gap:.8cqw;padding:0 1.5cqw;background:#0f1526;border-bottom:.3cqw solid var(--line)}
+.re-top i{width:1.1cqw;height:1.1cqw;background:var(--acc);display:block}
+.re-top b{font-weight:400;font-size:2.1cqw;margin-left:.8cqw;color:var(--dim)}
+.re-top span{margin-left:auto;font:400 1cqw 'Press Start 2P',monospace;color:var(--acc)}
+
+/* middle: media pool / viewer / inspector */
+.re-mid{flex:1;min-height:0;display:grid;grid-template-columns:28cqw 1fr 20cqw}
+.re-left,.re-right{padding:1.2cqw;overflow:hidden;background:#0b1020}
+.re-left{border-right:.3cqw solid var(--line)}
+.re-right{border-left:.3cqw solid var(--line)}
+.re-pool{display:grid;grid-template-columns:1fr 1fr;gap:1cqw}
+.re-thumb div{aspect-ratio:16/9;border:.2cqw solid var(--line);overflow:hidden;background:#000}
+.re-thumb span{display:block;font-size:1.6cqw;color:var(--dim);white-space:nowrap;overflow:hidden}
+.rs-scene{display:block;width:100%;height:100%;object-fit:cover;user-select:none;-webkit-user-drag:none}
+
+.re-wheels{display:flex;gap:1cqw;margin-bottom:3.2cqw}
+.re-wheel{position:relative;width:7.6cqw;height:7.6cqw;border-radius:50%;border:.25cqw solid var(--acc);background:radial-gradient(circle,#8a8fa6 0,rgba(138,143,166,0) 70%),conic-gradient(#ff4d4d,#ffd24d,#5dff6e,#4dffe8,#4d6dff,#d24dff,#ff4d4d)}
+.re-wheel i{position:absolute;width:1.3cqw;height:1.3cqw;background:#fff;border:.25cqw solid #080b16;border-radius:50%;transform:translate(-50%,-50%);transition:left .6s steps(8),top .6s steps(8)}
+.re-wheel span{position:absolute;top:100%;left:0;right:0;margin-top:.5cqw;text-align:center;font:400 .75cqw 'Press Start 2P',monospace;color:var(--dim)}
+.re-scope{display:flex;align-items:flex-end;gap:.35cqw;height:6.5cqw;padding:.5cqw;border:.2cqw solid var(--line);background:#05070f}
+.re-scope i{flex:1;background:linear-gradient(#ff6b6b,#4dffe8,#5b8cff);transition:height .6s steps(8)}
+
+.re-job{display:flex;flex-direction:column;gap:.8cqw}
+.re-job b{font-weight:400;font-size:2.1cqw}
+.re-job span{font-size:1.7cqw;color:var(--dim)}
+.re-blocks{display:grid;grid-template-columns:repeat(20,1fr);gap:.3cqw;margin-top:.6cqw}
+.re-blocks i{height:2cqw;background:var(--line)}
+.re-blocks i.on{background:var(--acc)}
+.re-job em{font:400 1.2cqw 'Press Start 2P',monospace;color:var(--acc);font-style:normal;margin-top:.6cqw}
+
+.re-view{position:relative;display:flex;align-items:center;justify-content:center;padding:1cqw;background:#05070f}
+.re-screen{width:100%;aspect-ratio:16/9;overflow:hidden;border:.2cqw solid var(--line);transition:filter .7s}
+.re-title{position:absolute;left:4cqw;bottom:7cqw;font:400 2.4cqw 'Press Start 2P',monospace;color:#eef2ff;text-shadow:.3cqw .3cqw 0 var(--shade);animation:re-in .5s steps(5)}
+@keyframes re-in{from{opacity:0;transform:translateY(1.4cqw)}}
+.re-tc{position:absolute;right:2cqw;bottom:1.6cqw;font-size:2cqw;line-height:1;color:var(--acc);background:rgba(5,7,15,.75);padding:.2cqw .6cqw}
+.re-tag{position:absolute;left:2cqw;top:1.6cqw;font:400 .85cqw/1 'Press Start 2P',monospace;color:var(--bg);background:var(--acc);padding:.5cqw .7cqw}
+
+.re-sl{margin-bottom:1.4cqw}
+.re-sl span{display:block;font-size:1.7cqw;line-height:1.1;color:var(--dim)}
+.re-sl div{height:1cqw;background:var(--line)}
+.re-sl b{display:block;height:100%;background:var(--acc);transition:width .6s steps(8)}
+
+/* timeline */
+.re-tl{height:22.5cqw;flex:none;display:flex;flex-direction:column;border-top:.3cqw solid var(--line);background:#0b1020}
+.re-tools{height:3.2cqw;display:flex;align-items:center;gap:.8cqw;padding:0 1.2cqw}
+.re-tools span{font:400 .8cqw 'Press Start 2P',monospace;padding:.45cqw .8cqw;border:.2cqw solid var(--line);color:var(--dim)}
+.re-tools span.on{background:var(--acc);border-color:var(--acc);color:var(--bg)}
+.re-tools em{margin-left:auto;font-style:normal;font-size:2cqw;color:var(--acc)}
+.re-tracks{display:flex;flex:1;min-height:0}
+.re-labels{width:5cqw;padding-top:3cqw;border-right:.2cqw solid var(--line)}
+.re-labels b{display:flex;align-items:center;justify-content:center;font:400 .85cqw 'Press Start 2P',monospace;color:var(--dim)}
+.re-labels b:nth-child(1){height:4.6cqw}.re-labels b:nth-child(2){height:5.6cqw}.re-labels b:nth-child(3){height:4.6cqw}
+.re-area{position:relative;width:92cqw;margin-left:1cqw}
+.re-ruler{position:relative;height:3cqw;border-bottom:.2cqw solid var(--line)}
+.re-ruler span{position:absolute;top:.7cqw;height:2.3cqw;border-left:.2cqw solid var(--line);padding-left:.4cqw;font-size:1.5cqw;line-height:1;color:var(--dim)}
+.re-row{position:relative;background:rgba(255,255,255,.03);border-bottom:.15cqw solid #1a2244}
+.re-row.r2{height:4.6cqw}.re-row.r1{height:5.6cqw}.re-row.ra{height:4.6cqw}
+.re-clip{position:absolute;top:.4cqw;bottom:.4cqw;display:flex;align-items:center;padding:0 .7cqw;overflow:hidden;white-space:nowrap;font-size:1.6cqw;line-height:1;color:#fff;text-shadow:.15cqw .15cqw 0 #080b16;border:.2cqw solid var(--acc);background-repeat:repeat-x;background-color:#26345c;transition:left .5s steps(8),width .5s steps(8),opacity .3s,transform .3s}
+.re-clip.gone{opacity:0;transform:scaleY(.2)}
+.re-clip.title{background:#eef2ff;color:#080b16;text-shadow:none;border-color:#080b16;opacity:0;transform:translateY(-1cqw)}
+.re-clip.title.in{opacity:1;transform:none}
+.re-xfade{position:absolute;top:0;bottom:0;width:4.2%;z-index:2;opacity:0;transition:opacity .3s}
+.re-xfade.in{opacity:1}
+.re-xfade i{display:block;width:100%;height:100%;background:#eef2ff;opacity:.9;clip-path:polygon(0 8%,100% 8%,50% 50%,100% 92%,0 92%,50% 50%)}
+.re-flash{position:absolute;top:-.5cqw;bottom:-.5cqw;width:.5cqw;z-index:3;background:#fff;box-shadow:0 0 1.6cqw #fff;animation:re-flash .5s steps(4) forwards}
+@keyframes re-flash{to{opacity:0}}
+.re-audio{position:absolute;top:.4cqw;bottom:.4cqw;left:0;overflow:hidden;background:rgba(91,140,255,.16);border:.2cqw solid #26345c;transition:width .5s steps(8)}
+.re-audio div{display:flex;align-items:center;width:92cqw;height:100%;padding:0 .2cqw}
+.re-audio i{flex:1;margin:0 .22cqw;background:var(--acc);opacity:.85}
+.re-head{position:absolute;top:0;bottom:0;width:0;border-left:.3cqw solid #ff6b6b;z-index:4;pointer-events:none;transition:left .4s linear}
+.re-head i{position:absolute;top:0;left:-.9cqw;width:1.5cqw;height:1.3cqw;background:#ff6b6b;clip-path:polygon(0 0,100% 0,50% 100%)}
+.fast .re-head{transition:left 90ms linear}
+
+/* page tabs */
+.re-tabs{height:4.4cqw;flex:none;display:flex;justify-content:center;background:#0f1526;border-top:.3cqw solid var(--line)}
+.re-tabs span{width:12cqw;display:flex;align-items:center;justify-content:center;font:400 .85cqw 'Press Start 2P',monospace;color:var(--dim)}
+.re-tabs span.on{color:var(--acc);background:rgba(91,140,255,.14);box-shadow:inset 0 -.4cqw 0 var(--acc)}
+
+/* mouse pointer */
+.re-cursor{position:absolute;z-index:10;width:2.6cqw;height:3.7cqw;pointer-events:none;transition:left .35s cubic-bezier(.4,0,.2,1),top .35s cubic-bezier(.4,0,.2,1)}
+.re-cursor svg{display:block;width:100%;height:100%;filter:drop-shadow(.25cqw .25cqw 0 rgba(0,0,0,.5))}
+.re-cursor i{position:absolute;left:.2cqw;top:.2cqw;width:3cqw;height:3cqw;border:.3cqw solid var(--acc);border-radius:50%;transform:translate(-50%,-50%) scale(0);opacity:0;animation:re-click .45s .3s ease-out forwards}
+@keyframes re-click{0%{opacity:1;transform:translate(-50%,-50%) scale(.2)}100%{opacity:0;transform:translate(-50%,-50%) scale(1.2)}}

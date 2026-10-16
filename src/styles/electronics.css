@@ -1,0 +1,16 @@
+/* Electronics page only (layout classes come from graphics.css) */
+.ehero h1{font-size:clamp(1.3rem,4.6vw,3.2rem)}
+.ard{display:block;width:100%;height:auto;image-rendering:pixelated}
+.oled{fill:#9db8ff;filter:drop-shadow(0 0 1.5px #5b8cff);animation:flick .3s steps(2)}
+@keyframes flick{0%{opacity:0}50%{opacity:1}75%{opacity:.4}100%{opacity:1}}
+.led-on{filter:drop-shadow(0 0 2px #5b8cff);animation:pulse 1.2s steps(2) infinite}
+@keyframes pulse{50%{opacity:.55}}
+.g-art .ard{filter:drop-shadow(8px 8px 0 var(--shade))}
+
+/* intro overlay */
+.ai{will-change:opacity;position:fixed;inset:0;z-index:50;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:34px;overflow:hidden}
+.ai .skip{position:absolute;top:calc(18px + env(safe-area-inset-top,0px));right:18px;z-index:2;font-size:.6rem;padding:10px 12px;box-shadow:none}
+.ai-board{width:min(88vw,620px);will-change:transform}
+.ai-board .ard{filter:drop-shadow(10px 10px 0 var(--shade))}
+.ai-msg{margin:0;min-height:1.6em;font-family:var(--font-px,'Press Start 2P',monospace);font-size:.7rem;color:var(--acc)}
+.ai.out .ai-msg,.ai.out .skip{opacity:0;transition:opacity .2s}
