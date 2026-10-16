@@ -1,0 +1,5 @@
+task-todo
+change dummy photos with the real one
+create the publicity page
+change the text with real text
+in member.js inside the data folder change the array.from with array.map and use real club member data in the array 
