@@ -1,5 +1,6 @@
-task-todo
-change dummy photos with the real one
-create the publicity page
-change the text with real text
-in member.js inside the data folder change the array.from with array.map and use real club member data in the array 
+**task-todo**
+change dummy photos with the real one (any one can do it)
+create the publicity page (prachi didi or any senior please use a appropriate animation )
+change the text with real text (any one just consult a senior about the content)
+in member.js inside the data folder change the array.from with array.map and use real club member data in the array (prachi didi or any senior)
+there is timer that prevent you from scrolling the page until it's not over shorten its duration or remove it entirely (prachi didi or any senior)
